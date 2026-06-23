@@ -263,18 +263,21 @@ export async function POST(req: NextRequest) {
     const periodEndMonth = periodEnd.getMonth() + 1;
     const payrollMonthStr = `${periodEndYear}-${String(periodEndMonth).padStart(2, "0")}`;
 
-    // Save file
-    const uploadsDir = path.join(process.cwd(), "uploads", "attendance");
-    await mkdir(uploadsDir, { recursive: true });
     const fileName = `attendance_${payrollMonthStr}_${Date.now()}.xlsx`;
-    await writeFile(path.join(uploadsDir, fileName), buffer);
+
+    // Save file to local disk in development only (Vercel has no writable filesystem)
+    if (!process.env.VERCEL) {
+      const uploadsDir = path.join(process.cwd(), "uploads", "attendance");
+      await mkdir(uploadsDir, { recursive: true });
+      await writeFile(path.join(uploadsDir, fileName), buffer);
+    }
 
     const uploadStatus = errors.length > 0 ? "INVALID" : "VALID";
 
     const upload = await prisma.attendanceUpload.create({
       data: {
         fileName: file.name,
-        filePath: `/uploads/attendance/${fileName}`,
+        filePath: process.env.VERCEL ? fileName : `/uploads/attendance/${fileName}`,
         periodStart,
         periodEnd,
         payrollMonth: payrollMonthStr,
