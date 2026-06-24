@@ -121,10 +121,9 @@ export default function PayrollRecordCard({
 
   const handleSaveClick = async () => {
     const newLop = parseFloat(fields.lopDays) || 0;
-    const originalLop = Number(rec.lopDays);
 
-    // If LOP increased and there's leave balance available → show dialog
-    if (newLop > originalLop && availableBalance > 0) {
+    // If there are LOP days and leave balance is available → show dialog
+    if (newLop > 0 && availableBalance > 0) {
       setPendingFields(fields);
       setShowLeaveDialog(true);
       return;
@@ -177,8 +176,6 @@ export default function PayrollRecordCard({
 
   // LOP dialog values
   const newLopForDialog = parseFloat(pendingFields?.lopDays ?? "0") || 0;
-  const originalLop = Number(rec.lopDays);
-  const addedLop = Math.max(0, newLopForDialog - originalLop);
   const daysConvertible = Math.min(newLopForDialog, availableBalance);
 
   return (
@@ -189,8 +186,9 @@ export default function PayrollRecordCard({
           <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4">
             <h3 className="text-base font-bold text-stone-900 mb-1">Use Leave Balance?</h3>
             <p className="text-sm text-stone-500 mb-4">
-              You added <b className="text-stone-700">{addedLop} LOP {addedLop === 1 ? "day" : "days"}</b>.
-              This employee has <b className="text-blue-600">{availableBalance.toFixed(2)} days</b> of leave balance available.
+              This employee has <b className="text-stone-700">{newLopForDialog} LOP {newLopForDialog === 1 ? "day" : "days"}</b> and{" "}
+              <b className="text-blue-600">{availableBalance.toFixed(2)} days</b> of leave balance available.
+              Do you want to use the leave balance to cover the LOP?
             </p>
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4 text-sm text-blue-800 space-y-1">
               <p><b>{daysConvertible.toFixed(2)} day(s)</b> will be converted from LOP → Paid Leave</p>
