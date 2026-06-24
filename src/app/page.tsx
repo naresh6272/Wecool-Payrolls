@@ -78,13 +78,142 @@ export default async function RootPage() {
             </div>
           </div>
 
-          {/* Logo card */}
-          <div className="flex-shrink-0">
-            <div className="w-80 h-52 relative">
-              <Image src="/wecool-logo.png" alt="Wecool" fill className="object-contain" sizes="320px" quality={100} />
+          {/* Right side illustration */}
+          <div className="flex-shrink-0 relative w-full max-w-lg">
+            {/* Logo */}
+            <div className="w-72 h-44 relative mx-auto">
+              <Image src="/wecool-logo.png" alt="Wecool" fill className="object-contain" sizes="288px" quality={100} />
             </div>
-            <p className="text-center mt-1 text-2xl font-black text-gray-900">Wecool</p>
-            <p className="text-center text-sm font-semibold text-orange-500 tracking-widest uppercase">Payroll System</p>
+            <p className="text-center mt-1 text-xl font-black text-gray-900">Wecool</p>
+            <p className="text-center text-xs font-bold text-orange-500 tracking-widest uppercase mb-6">Payroll System</p>
+
+            {/* SVG Illustration */}
+            <svg viewBox="0 0 480 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+
+              {/* Decorative background circles */}
+              <circle cx="60" cy="180" r="50" stroke="#fed7aa" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.6"/>
+              <circle cx="420" cy="40" r="35" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.6"/>
+              <circle cx="240" cy="110" r="80" stroke="#fde68a" strokeWidth="1" strokeDasharray="8 6" opacity="0.3"/>
+
+              {/* ── Person A: sitting at laptop (left) ── */}
+              {/* Chair back */}
+              <rect x="52" y="130" width="5" height="55" rx="2.5" fill="#cbd5e1"/>
+              <rect x="38" y="128" width="32" height="5" rx="2.5" fill="#cbd5e1"/>
+              {/* Head */}
+              <circle cx="80" cy="90" r="18" fill="#fde68a" stroke="#f97316" strokeWidth="2"/>
+              {/* Hair */}
+              <path d="M62 88 Q63 72 80 70 Q97 72 98 88" fill="#1e3a5f" stroke="none"/>
+              {/* Eyes */}
+              <circle cx="73" cy="90" r="2.5" fill="#1e3a5f"/>
+              <circle cx="87" cy="90" r="2.5" fill="#1e3a5f"/>
+              {/* Smile */}
+              <path d="M74 97 Q80 102 86 97" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              {/* Body */}
+              <path d="M62 108 Q80 118 98 108 L100 155 L60 155 Z" fill="#3b82f6" stroke="#1e3a5f" strokeWidth="1.5"/>
+              {/* Collar */}
+              <path d="M74 108 L80 120 L86 108" stroke="white" strokeWidth="1.5" fill="none"/>
+              {/* Left arm to desk */}
+              <path d="M62 120 L30 145 L30 150" stroke="#fde68a" strokeWidth="8" strokeLinecap="round" fill="none"/>
+              {/* Right arm to desk */}
+              <path d="M98 120 L130 145 L130 150" stroke="#fde68a" strokeWidth="8" strokeLinecap="round" fill="none"/>
+              {/* Desk */}
+              <rect x="18" y="150" width="145" height="8" rx="4" fill="#94a3b8"/>
+              <rect x="22" y="158" width="5" height="30" rx="2" fill="#94a3b8"/>
+              <rect x="136" y="158" width="5" height="30" rx="2" fill="#94a3b8"/>
+              {/* Laptop base */}
+              <rect x="50" y="135" width="60" height="16" rx="3" fill="#1e293b"/>
+              {/* Laptop screen */}
+              <rect x="48" y="105" width="64" height="32" rx="4" fill="#1e293b"/>
+              <rect x="51" y="108" width="58" height="26" rx="2" fill="#0ea5e9"/>
+              {/* Screen content lines */}
+              <rect x="54" y="112" width="30" height="3" rx="1.5" fill="white" opacity="0.7"/>
+              <rect x="54" y="118" width="20" height="2" rx="1" fill="white" opacity="0.5"/>
+              <rect x="54" y="123" width="25" height="2" rx="1" fill="white" opacity="0.5"/>
+              {/* Salary badge on screen */}
+              <rect x="86" y="111" width="20" height="8" rx="2" fill="#f97316"/>
+              <text x="88" y="118" fontSize="4.5" fill="white" fontWeight="bold">₹PAY</text>
+              {/* Legs */}
+              <rect x="65" y="155" width="10" height="30" rx="3" fill="#1e3a5f"/>
+              <rect x="83" y="155" width="10" height="30" rx="3" fill="#1e3a5f"/>
+              {/* Shoes */}
+              <ellipse cx="70" cy="186" rx="10" ry="5" fill="#0f172a"/>
+              <ellipse cx="88" cy="186" rx="10" ry="5" fill="#0f172a"/>
+
+              {/* ── Person B: standing with clipboard (right) ── */}
+              {/* Head */}
+              <circle cx="370" cy="75" r="20" fill="#fde68a" stroke="#f97316" strokeWidth="2"/>
+              {/* Hair */}
+              <path d="M350 73 Q352 55 370 53 Q388 55 390 73" fill="#7c3aed" stroke="none"/>
+              {/* Eyes */}
+              <circle cx="363" cy="75" r="2.5" fill="#1e3a5f"/>
+              <circle cx="377" cy="75" r="2.5" fill="#1e3a5f"/>
+              {/* Smile */}
+              <path d="M364 83 Q370 88 376 83" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              {/* Body */}
+              <path d="M350 95 Q370 106 390 95 L393 160 L347 160 Z" fill="#16a34a" stroke="#14532d" strokeWidth="1.5"/>
+              {/* Collar */}
+              <path d="M364 95 L370 108 L376 95" stroke="white" strokeWidth="1.5" fill="none"/>
+              {/* Right arm holding clipboard */}
+              <path d="M390 110 L415 120" stroke="#fde68a" strokeWidth="8" strokeLinecap="round"/>
+              {/* Left arm down */}
+              <path d="M350 110 L335 140" stroke="#fde68a" strokeWidth="8" strokeLinecap="round"/>
+              {/* Clipboard */}
+              <rect x="408" y="108" width="36" height="46" rx="3" fill="white" stroke="#94a3b8" strokeWidth="1.5"/>
+              <rect x="420" y="105" width="12" height="7" rx="2" fill="#94a3b8"/>
+              <rect x="412" y="120" width="28" height="2.5" rx="1" fill="#f97316"/>
+              <rect x="412" y="126" width="22" height="2" rx="1" fill="#e2e8f0"/>
+              <rect x="412" y="131" width="25" height="2" rx="1" fill="#e2e8f0"/>
+              <rect x="412" y="136" width="18" height="2" rx="1" fill="#e2e8f0"/>
+              <rect x="412" y="141" width="28" height="2" rx="1" fill="#16a34a"/>
+              <rect x="412" y="146" width="20" height="2" rx="1" fill="#e2e8f0"/>
+              {/* Legs */}
+              <rect x="355" y="160" width="12" height="35" rx="3" fill="#1e3a5f"/>
+              <rect x="373" y="160" width="12" height="35" rx="3" fill="#1e3a5f"/>
+              {/* Shoes */}
+              <ellipse cx="361" cy="196" rx="12" ry="5" fill="#0f172a"/>
+              <ellipse cx="379" cy="196" rx="12" ry="5" fill="#0f172a"/>
+
+              {/* ── Floating cards ── */}
+              {/* Card 1: Net Pay */}
+              <rect x="155" y="20" width="105" height="52" rx="10" fill="white" stroke="#fed7aa" strokeWidth="1.5" filter="url(#shadow)"/>
+              <rect x="155" y="20" width="105" height="14" rx="10" fill="#f97316"/>
+              <rect x="155" y="27" width="105" height="7" rx="0" fill="#f97316"/>
+              <text x="163" y="31" fontSize="6" fill="white" fontWeight="bold">NET PAY</text>
+              <text x="163" y="46" fontSize="13" fill="#1e293b" fontWeight="bold">₹61,299</text>
+              <text x="163" y="57" fontSize="5.5" fill="#94a3b8">May 2026 · Approved</text>
+              <circle cx="244" cy="57" r="4" fill="#16a34a"/>
+              <path d="M242 57 L244 59 L247 54" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+
+              {/* Card 2: Attendance */}
+              <rect x="270" y="148" width="98" height="56" rx="10" fill="white" stroke="#bbf7d0" strokeWidth="1.5"/>
+              <rect x="270" y="148" width="98" height="14" rx="10" fill="#16a34a"/>
+              <rect x="270" y="155" width="98" height="7" rx="0" fill="#16a34a"/>
+              <text x="278" y="160" fontSize="6" fill="white" fontWeight="bold">ATTENDANCE</text>
+              <text x="278" y="175" fontSize="9" fill="#1e293b" fontWeight="bold">21 Present</text>
+              <text x="278" y="185" fontSize="5.5" fill="#94a3b8">4 W/Off · 0 LOP</text>
+              <rect x="278" y="190" width="60" height="4" rx="2" fill="#e2e8f0"/>
+              <rect x="278" y="190" width="51" height="4" rx="2" fill="#16a34a"/>
+
+              {/* Card 3: Leave */}
+              <rect x="168" y="155" width="90" height="50" rx="10" fill="white" stroke="#fecaca" strokeWidth="1.5"/>
+              <rect x="168" y="155" width="90" height="14" rx="10" fill="#ef4444"/>
+              <rect x="168" y="162" width="90" height="7" rx="0" fill="#ef4444"/>
+              <text x="176" y="167" fontSize="6" fill="white" fontWeight="bold">LEAVE BAL</text>
+              <text x="176" y="182" fontSize="11" fill="#1e293b" fontWeight="bold">1.52 days</text>
+              <text x="176" y="195" fontSize="5.5" fill="#94a3b8">of 7.52 allocated</text>
+
+              {/* Dotted connecting lines */}
+              <line x1="207" y1="72" x2="207" y2="155" stroke="#f97316" strokeWidth="1" strokeDasharray="4 3" opacity="0.4"/>
+              <line x1="213" y1="72" x2="320" y2="155" stroke="#16a34a" strokeWidth="1" strokeDasharray="4 3" opacity="0.4"/>
+
+              {/* Small floating dots decoration */}
+              <circle cx="140" cy="50" r="4" fill="#fed7aa"/>
+              <circle cx="128" cy="70" r="3" fill="#bbf7d0"/>
+              <circle cx="148" cy="80" r="2" fill="#fca5a5"/>
+              <circle cx="450" cy="100" r="5" fill="#fed7aa"/>
+              <circle cx="462" cy="120" r="3" fill="#bbf7d0"/>
+              <circle cx="440" cy="125" r="2.5" fill="#fca5a5"/>
+            </svg>
           </div>
         </div>
       </section>
