@@ -343,16 +343,16 @@ export default function PayrollRecordCard({
                         ["Late", rec.lateCount, "lateCount", "times"],
                         ["OT", rec.overtimeDays, null, `days${Number(rec.overtimeAmount) > 0 ? ` · ₹${fmt(rec.overtimeAmount)}` : ""}`],
                       ] as [string, number, keyof EditFields | null, string][]).map(([l, v, key, u]) => (
-                        <div key={l} className="flex justify-between items-center text-stone-400">
+                        <div key={l} className="flex justify-between items-center text-stone-600 text-sm">
                           <span>{l}</span>
                           {isEditing && key
                             ? <input type="number" min="0" step="0.5" value={fields[key]} onChange={f(key)}
                                 className="w-20 text-right px-2 py-0.5 border border-orange-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
-                            : <span>{Number(v)} {u}</span>}
+                            : <span className="font-medium">{Number(v)} {u}</span>}
                         </div>
                       ))}
                       {/* LOP row — shows full absent days with leave coverage breakdown */}
-                      <div className="flex justify-between items-start text-stone-400">
+                      <div className="flex justify-between items-start text-stone-600 text-sm">
                         <span>LOP</span>
                         {isEditing ? (
                           <input type="number" min="0" step="0.5" value={fields.lopDays} onChange={f("lopDays")}
@@ -361,11 +361,11 @@ export default function PayrollRecordCard({
                           const totalAbsent = Number(rec.absentDays);
                           const actualLop = Number(rec.lopDays);
                           const coveredByLeave = totalAbsent - actualLop;
-                          if (totalAbsent === 0) return <span>0 days</span>;
-                          if (coveredByLeave <= 0) return <span>{actualLop} days</span>;
+                          if (totalAbsent === 0) return <span className="font-medium">0 days</span>;
+                          if (coveredByLeave <= 0) return <span className="font-medium">{actualLop} days</span>;
                           return (
                             <div className="text-right">
-                              <span>{totalAbsent} days</span>
+                              <span className="font-medium">{totalAbsent} days</span>
                               {coveredByLeave === totalAbsent ? (
                                 <p className="text-xs text-blue-500">{coveredByLeave} covered by leave</p>
                               ) : (
