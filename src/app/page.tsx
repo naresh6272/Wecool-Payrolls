@@ -80,10 +80,10 @@ export default async function RootPage() {
 
           {/* Logo card */}
           <div className="flex-shrink-0">
-            <div className="w-64 h-48 relative">
-              <Image src="/wecool-logo.png" alt="Wecool" fill className="object-contain" sizes="256px" quality={100} />
+            <div className="w-80 h-52 relative">
+              <Image src="/wecool-logo.png" alt="Wecool" fill className="object-contain" sizes="320px" quality={100} />
             </div>
-            <p className="text-center mt-4 text-2xl font-black text-gray-900">Wecool</p>
+            <p className="text-center mt-1 text-2xl font-black text-gray-900">Wecool</p>
             <p className="text-center text-sm font-semibold text-orange-500 tracking-widest uppercase">Payroll System</p>
           </div>
         </div>
