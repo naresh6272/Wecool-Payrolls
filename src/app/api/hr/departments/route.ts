@@ -10,7 +10,9 @@ export async function GET() {
       orderBy: { name: "asc" },
       select: { id: true, name: true },
     });
-    return NextResponse.json(departments);
+    return NextResponse.json(departments, {
+      headers: { "Cache-Control": "private, max-age=300, stale-while-revalidate=600" },
+    });
   } catch {
     return NextResponse.json([], { status: 200 });
   }

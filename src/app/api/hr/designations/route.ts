@@ -15,7 +15,9 @@ export async function GET(req: NextRequest) {
       orderBy: { name: "asc" },
       select: { id: true, name: true, departmentId: true },
     });
-    return NextResponse.json(designations);
+    return NextResponse.json(designations, {
+      headers: { "Cache-Control": "private, max-age=300, stale-while-revalidate=600" },
+    });
   } catch {
     return NextResponse.json([], { status: 200 });
   }

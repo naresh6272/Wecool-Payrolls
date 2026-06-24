@@ -29,7 +29,7 @@ export async function GET(_req: NextRequest) {
         user: { select: { email: true, status: true } },
         department: { select: { id: true, name: true } },
         designation: { select: { id: true, name: true } },
-        salaryStructures: { where: { isActive: true }, take: 1 },
+        salaryStructures: { where: { isActive: true }, take: 1, select: { monthlySalary: true, effectiveFrom: true } },
       },
       orderBy: { createdAt: "desc" },
     });
