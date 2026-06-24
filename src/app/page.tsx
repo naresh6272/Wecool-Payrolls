@@ -87,132 +87,219 @@ export default async function RootPage() {
             <p className="text-center mt-1 text-xl font-black text-gray-900">Wecool</p>
             <p className="text-center text-xs font-bold text-orange-500 tracking-widest uppercase mb-6">Payroll System</p>
 
-            {/* SVG Illustration */}
-            <svg viewBox="0 0 480 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            {/* SVG Illustration - flat design people */}
+            <svg viewBox="0 0 520 260" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+              <defs>
+                <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                  <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#00000018"/>
+                </filter>
+              </defs>
 
-              {/* Decorative background circles */}
-              <circle cx="60" cy="180" r="50" stroke="#fed7aa" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.6"/>
-              <circle cx="420" cy="40" r="35" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.6"/>
-              <circle cx="240" cy="110" r="80" stroke="#fde68a" strokeWidth="1" strokeDasharray="8 6" opacity="0.3"/>
-
-              {/* ── Person A: sitting at laptop (left) ── */}
-              {/* Chair back */}
-              <rect x="52" y="130" width="5" height="55" rx="2.5" fill="#cbd5e1"/>
-              <rect x="38" y="128" width="32" height="5" rx="2.5" fill="#cbd5e1"/>
+              {/* ── PERSON 1: Man holding phone (top-left, blue shirt) ── */}
+              {/* Body/torso */}
+              <rect x="28" y="108" width="52" height="58" rx="14" fill="#6366f1"/>
+              {/* Neck */}
+              <rect x="48" y="98" width="12" height="14" rx="6" fill="#FBBF6A"/>
               {/* Head */}
-              <circle cx="80" cy="90" r="18" fill="#fde68a" stroke="#f97316" strokeWidth="2"/>
-              {/* Hair */}
-              <path d="M62 88 Q63 72 80 70 Q97 72 98 88" fill="#1e3a5f" stroke="none"/>
-              {/* Eyes */}
-              <circle cx="73" cy="90" r="2.5" fill="#1e3a5f"/>
-              <circle cx="87" cy="90" r="2.5" fill="#1e3a5f"/>
+              <ellipse cx="54" cy="80" rx="22" ry="24" fill="#FBBF6A"/>
+              {/* Hair - dark short */}
+              <path d="M32 72 Q33 50 54 48 Q75 50 76 72 Q72 60 54 58 Q36 60 32 72Z" fill="#1e293b"/>
+              {/* Eye left */}
+              <ellipse cx="46" cy="80" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="46" cy="79" rx="1.2" ry="1.2" fill="white"/>
+              {/* Eye right */}
+              <ellipse cx="62" cy="80" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="62" cy="79" rx="1.2" ry="1.2" fill="white"/>
+              {/* Eyebrows */}
+              <path d="M42 73 Q46 71 50 73" stroke="#1e293b" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              <path d="M58 73 Q62 71 66 73" stroke="#1e293b" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
               {/* Smile */}
-              <path d="M74 97 Q80 102 86 97" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              {/* Body */}
-              <path d="M62 108 Q80 118 98 108 L100 155 L60 155 Z" fill="#3b82f6" stroke="#1e3a5f" strokeWidth="1.5"/>
-              {/* Collar */}
-              <path d="M74 108 L80 120 L86 108" stroke="white" strokeWidth="1.5" fill="none"/>
-              {/* Left arm to desk */}
-              <path d="M62 120 L30 145 L30 150" stroke="#fde68a" strokeWidth="8" strokeLinecap="round" fill="none"/>
-              {/* Right arm to desk */}
-              <path d="M98 120 L130 145 L130 150" stroke="#fde68a" strokeWidth="8" strokeLinecap="round" fill="none"/>
-              {/* Desk */}
-              <rect x="18" y="150" width="145" height="8" rx="4" fill="#94a3b8"/>
-              <rect x="22" y="158" width="5" height="30" rx="2" fill="#94a3b8"/>
-              <rect x="136" y="158" width="5" height="30" rx="2" fill="#94a3b8"/>
-              {/* Laptop base */}
-              <rect x="50" y="135" width="60" height="16" rx="3" fill="#1e293b"/>
-              {/* Laptop screen */}
-              <rect x="48" y="105" width="64" height="32" rx="4" fill="#1e293b"/>
-              <rect x="51" y="108" width="58" height="26" rx="2" fill="#0ea5e9"/>
-              {/* Screen content lines */}
-              <rect x="54" y="112" width="30" height="3" rx="1.5" fill="white" opacity="0.7"/>
-              <rect x="54" y="118" width="20" height="2" rx="1" fill="white" opacity="0.5"/>
-              <rect x="54" y="123" width="25" height="2" rx="1" fill="white" opacity="0.5"/>
-              {/* Salary badge on screen */}
-              <rect x="86" y="111" width="20" height="8" rx="2" fill="#f97316"/>
-              <text x="88" y="118" fontSize="4.5" fill="white" fontWeight="bold">₹PAY</text>
-              {/* Legs */}
-              <rect x="65" y="155" width="10" height="30" rx="3" fill="#1e3a5f"/>
-              <rect x="83" y="155" width="10" height="30" rx="3" fill="#1e3a5f"/>
-              {/* Shoes */}
-              <ellipse cx="70" cy="186" rx="10" ry="5" fill="#0f172a"/>
-              <ellipse cx="88" cy="186" rx="10" ry="5" fill="#0f172a"/>
-
-              {/* ── Person B: standing with clipboard (right) ── */}
-              {/* Head */}
-              <circle cx="370" cy="75" r="20" fill="#fde68a" stroke="#f97316" strokeWidth="2"/>
-              {/* Hair */}
-              <path d="M350 73 Q352 55 370 53 Q388 55 390 73" fill="#7c3aed" stroke="none"/>
-              {/* Eyes */}
-              <circle cx="363" cy="75" r="2.5" fill="#1e3a5f"/>
-              <circle cx="377" cy="75" r="2.5" fill="#1e3a5f"/>
-              {/* Smile */}
-              <path d="M364 83 Q370 88 376 83" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              {/* Body */}
-              <path d="M350 95 Q370 106 390 95 L393 160 L347 160 Z" fill="#16a34a" stroke="#14532d" strokeWidth="1.5"/>
-              {/* Collar */}
-              <path d="M364 95 L370 108 L376 95" stroke="white" strokeWidth="1.5" fill="none"/>
-              {/* Right arm holding clipboard */}
-              <path d="M390 110 L415 120" stroke="#fde68a" strokeWidth="8" strokeLinecap="round"/>
+              <path d="M46 88 Q54 95 62 88" stroke="#e07b39" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              {/* Tie */}
+              <path d="M50 108 L54 118 L58 108" fill="#1e293b"/>
+              <path d="M52 118 L54 145 L56 118Z" fill="#1e293b"/>
               {/* Left arm down */}
-              <path d="M350 110 L335 140" stroke="#fde68a" strokeWidth="8" strokeLinecap="round"/>
-              {/* Clipboard */}
-              <rect x="408" y="108" width="36" height="46" rx="3" fill="white" stroke="#94a3b8" strokeWidth="1.5"/>
-              <rect x="420" y="105" width="12" height="7" rx="2" fill="#94a3b8"/>
-              <rect x="412" y="120" width="28" height="2.5" rx="1" fill="#f97316"/>
-              <rect x="412" y="126" width="22" height="2" rx="1" fill="#e2e8f0"/>
-              <rect x="412" y="131" width="25" height="2" rx="1" fill="#e2e8f0"/>
-              <rect x="412" y="136" width="18" height="2" rx="1" fill="#e2e8f0"/>
-              <rect x="412" y="141" width="28" height="2" rx="1" fill="#16a34a"/>
-              <rect x="412" y="146" width="20" height="2" rx="1" fill="#e2e8f0"/>
+              <path d="M28 120 Q10 130 12 155" stroke="#FBBF6A" strokeWidth="13" strokeLinecap="round" fill="none"/>
+              {/* Right arm holding phone */}
+              <path d="M80 118 Q98 112 102 130" stroke="#FBBF6A" strokeWidth="13" strokeLinecap="round" fill="none"/>
+              {/* Phone */}
+              <rect x="96" y="118" width="22" height="36" rx="4" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.5"/>
+              <rect x="99" y="122" width="16" height="24" rx="2" fill="#6366f1"/>
+              <circle cx="107" cy="150" r="2" fill="#94a3b8"/>
               {/* Legs */}
-              <rect x="355" y="160" width="12" height="35" rx="3" fill="#1e3a5f"/>
-              <rect x="373" y="160" width="12" height="35" rx="3" fill="#1e3a5f"/>
+              <rect x="32" y="162" width="18" height="40" rx="8" fill="#1e293b"/>
+              <rect x="56" y="162" width="18" height="40" rx="8" fill="#1e293b"/>
               {/* Shoes */}
-              <ellipse cx="361" cy="196" rx="12" ry="5" fill="#0f172a"/>
-              <ellipse cx="379" cy="196" rx="12" ry="5" fill="#0f172a"/>
+              <ellipse cx="41" cy="204" rx="14" ry="7" fill="#0f172a"/>
+              <ellipse cx="65" cy="204" rx="14" ry="7" fill="#0f172a"/>
 
-              {/* ── Floating cards ── */}
-              {/* Card 1: Net Pay */}
-              <rect x="155" y="20" width="105" height="52" rx="10" fill="white" stroke="#fed7aa" strokeWidth="1.5" filter="url(#shadow)"/>
-              <rect x="155" y="20" width="105" height="14" rx="10" fill="#f97316"/>
-              <rect x="155" y="27" width="105" height="7" rx="0" fill="#f97316"/>
-              <text x="163" y="31" fontSize="6" fill="white" fontWeight="bold">NET PAY</text>
-              <text x="163" y="46" fontSize="13" fill="#1e293b" fontWeight="bold">₹61,299</text>
-              <text x="163" y="57" fontSize="5.5" fill="#94a3b8">May 2026 · Approved</text>
-              <circle cx="244" cy="57" r="4" fill="#16a34a"/>
-              <path d="M242 57 L244 59 L247 54" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+              {/* ── PERSON 2: Woman with long hair holding phone to ear (center) ── */}
+              {/* Body */}
+              <rect x="208" y="112" width="54" height="60" rx="14" fill="#1e293b"/>
+              {/* Neck */}
+              <rect x="229" y="100" width="12" height="16" rx="6" fill="#F5C5A3"/>
+              {/* Head */}
+              <ellipse cx="235" cy="80" rx="23" ry="25" fill="#F5C5A3"/>
+              {/* Long wavy hair */}
+              <path d="M212 68 Q210 45 235 42 Q260 45 258 68 Q256 50 235 48 Q214 50 212 68Z" fill="#c4a882"/>
+              {/* Hair sides flowing down */}
+              <path d="M212 68 Q205 90 208 130" stroke="#c4a882" strokeWidth="14" strokeLinecap="round" fill="none"/>
+              <path d="M258 68 Q265 90 262 130" stroke="#c4a882" strokeWidth="14" strokeLinecap="round" fill="none"/>
+              {/* Eyes */}
+              <ellipse cx="226" cy="80" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="226" cy="79" rx="1.2" ry="1.2" fill="white"/>
+              <ellipse cx="244" cy="80" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="244" cy="79" rx="1.2" ry="1.2" fill="white"/>
+              {/* Eyebrows */}
+              <path d="M222 72 Q226 70 230 72" stroke="#8B6340" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              <path d="M240 72 Q244 70 248 72" stroke="#8B6340" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              {/* Smile */}
+              <path d="M228 89 Q235 95 242 89" stroke="#c0604a" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              {/* Left arm crosses body */}
+              <path d="M208 125 Q215 145 230 148" stroke="#F5C5A3" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Right arm up to ear with phone */}
+              <path d="M262 122 Q272 105 268 90" stroke="#F5C5A3" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Phone at ear */}
+              <rect x="256" y="68" width="18" height="30" rx="4" fill="#374151" stroke="#1f2937" strokeWidth="1"/>
+              <rect x="259" y="71" width="12" height="18" rx="1.5" fill="#6366f1"/>
+              {/* Legs */}
+              <rect x="213" y="168" width="18" height="40" rx="8" fill="#374151"/>
+              <rect x="237" y="168" width="18" height="40" rx="8" fill="#374151"/>
+              {/* Shoes */}
+              <ellipse cx="222" cy="210" rx="14" ry="7" fill="#1f2937"/>
+              <ellipse cx="246" cy="210" rx="14" ry="7" fill="#1f2937"/>
 
-              {/* Card 2: Attendance */}
-              <rect x="270" y="148" width="98" height="56" rx="10" fill="white" stroke="#bbf7d0" strokeWidth="1.5"/>
-              <rect x="270" y="148" width="98" height="14" rx="10" fill="#16a34a"/>
-              <rect x="270" y="155" width="98" height="7" rx="0" fill="#16a34a"/>
-              <text x="278" y="160" fontSize="6" fill="white" fontWeight="bold">ATTENDANCE</text>
-              <text x="278" y="175" fontSize="9" fill="#1e293b" fontWeight="bold">21 Present</text>
-              <text x="278" y="185" fontSize="5.5" fill="#94a3b8">4 W/Off · 0 LOP</text>
-              <rect x="278" y="190" width="60" height="4" rx="2" fill="#e2e8f0"/>
-              <rect x="278" y="190" width="51" height="4" rx="2" fill="#16a34a"/>
+              {/* ── PERSON 3: Man with laptop (bottom-left, yellow shirt) ── */}
+              {/* Body */}
+              <rect x="78" y="182" width="52" height="52" rx="14" fill="#f59e0b"/>
+              {/* Neck */}
+              <rect x="98" y="170" width="12" height="16" rx="6" fill="#FBBF6A"/>
+              {/* Head */}
+              <ellipse cx="104" cy="150" rx="22" ry="23" fill="#FBBF6A"/>
+              {/* Hair - black short */}
+              <path d="M82 144 Q83 124 104 122 Q125 124 126 144 Q122 132 104 130 Q86 132 82 144Z" fill="#1e293b"/>
+              {/* Eyes */}
+              <ellipse cx="96" cy="150" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="96" cy="149" rx="1.2" ry="1.2" fill="white"/>
+              <ellipse cx="112" cy="150" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="112" cy="149" rx="1.2" ry="1.2" fill="white"/>
+              {/* Eyebrows */}
+              <path d="M92 142 Q96 140 100 142" stroke="#1e293b" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              <path d="M108 142 Q112 140 116 142" stroke="#1e293b" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              {/* Smile */}
+              <path d="M96 158 Q104 164 112 158" stroke="#c0604a" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              {/* Arms holding laptop */}
+              <path d="M78 195 Q60 205 55 220" stroke="#FBBF6A" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              <path d="M130 195 Q148 205 153 220" stroke="#FBBF6A" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Laptop */}
+              <rect x="52" y="218" width="108" height="62" rx="5" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.5"/>
+              <rect x="56" y="222" width="100" height="50" rx="3" fill="#1e293b"/>
+              <rect x="60" y="226" width="92" height="42" rx="2" fill="#f97316" opacity="0.9"/>
+              <rect x="64" y="230" width="50" height="4" rx="2" fill="white" opacity="0.8"/>
+              <rect x="64" y="238" width="35" height="3" rx="1.5" fill="white" opacity="0.5"/>
+              <rect x="64" y="245" width="42" height="3" rx="1.5" fill="white" opacity="0.5"/>
+              <rect x="118" y="232" width="28" height="14" rx="3" fill="white" opacity="0.2"/>
+              <text x="120" y="243" fontSize="7" fill="white" fontWeight="bold" opacity="0.9">₹PAY</text>
 
-              {/* Card 3: Leave */}
-              <rect x="168" y="155" width="90" height="50" rx="10" fill="white" stroke="#fecaca" strokeWidth="1.5"/>
-              <rect x="168" y="155" width="90" height="14" rx="10" fill="#ef4444"/>
-              <rect x="168" y="162" width="90" height="7" rx="0" fill="#ef4444"/>
-              <text x="176" y="167" fontSize="6" fill="white" fontWeight="bold">LEAVE BAL</text>
-              <text x="176" y="182" fontSize="11" fill="#1e293b" fontWeight="bold">1.52 days</text>
-              <text x="176" y="195" fontSize="5.5" fill="#94a3b8">of 7.52 allocated</text>
+              {/* ── PERSON 4: Woman with phone (bottom-center, purple) ── */}
+              {/* Body */}
+              <rect x="298" y="178" width="52" height="55" rx="14" fill="#a855f7"/>
+              {/* Neck */}
+              <rect x="318" y="166" width="12" height="16" rx="6" fill="#F5C5A3"/>
+              {/* Head */}
+              <ellipse cx="324" cy="146" rx="22" ry="23" fill="#F5C5A3"/>
+              {/* Blonde hair */}
+              <path d="M302 138 Q302 118 324 116 Q346 118 346 138 Q342 126 324 124 Q306 126 302 138Z" fill="#fbbf24"/>
+              <path d="M302 138 Q296 160 300 185" stroke="#fbbf24" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              <path d="M346 138 Q352 160 348 185" stroke="#fbbf24" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Eyes */}
+              <ellipse cx="316" cy="147" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="316" cy="146" rx="1.2" ry="1.2" fill="white"/>
+              <ellipse cx="332" cy="147" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="332" cy="146" rx="1.2" ry="1.2" fill="white"/>
+              {/* Eyebrows */}
+              <path d="M312 139 Q316 137 320 139" stroke="#8B6340" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              <path d="M328 139 Q332 137 336 139" stroke="#8B6340" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              {/* Smile */}
+              <path d="M316 155 Q324 162 332 155" stroke="#c0604a" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              {/* Left arm down */}
+              <path d="M298 192 Q280 200 278 218" stroke="#F5C5A3" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Right arm holding phone */}
+              <path d="M350 190 Q362 185 364 170" stroke="#F5C5A3" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Phone */}
+              <rect x="356" y="152" width="20" height="34" rx="4" fill="#374151" stroke="#1f2937" strokeWidth="1"/>
+              <rect x="359" y="156" width="14" height="22" rx="2" fill="#16a34a"/>
+              <rect x="362" y="159" width="8" height="2" rx="1" fill="white" opacity="0.7"/>
+              <rect x="362" y="164" width="6" height="2" rx="1" fill="white" opacity="0.5"/>
+              <rect x="362" y="169" width="7" height="2" rx="1" fill="white" opacity="0.5"/>
+              {/* Legs */}
+              <rect x="302" y="229" width="18" height="35" rx="8" fill="#7c3aed"/>
+              <rect x="326" y="229" width="18" height="35" rx="8" fill="#7c3aed"/>
+              {/* Shoes */}
+              <ellipse cx="311" cy="266" rx="13" ry="6" fill="#4c1d95"/>
+              <ellipse cx="335" cy="266" rx="13" ry="6" fill="#4c1d95"/>
 
-              {/* Dotted connecting lines */}
-              <line x1="207" y1="72" x2="207" y2="155" stroke="#f97316" strokeWidth="1" strokeDasharray="4 3" opacity="0.4"/>
-              <line x1="213" y1="72" x2="320" y2="155" stroke="#16a34a" strokeWidth="1" strokeDasharray="4 3" opacity="0.4"/>
+              {/* ── PERSON 5: Man with tablet (right, light blue shirt) ── */}
+              {/* Body */}
+              <rect x="408" y="158" width="52" height="58" rx="14" fill="#93c5fd"/>
+              {/* Neck */}
+              <rect x="428" y="146" width="12" height="16" rx="6" fill="#FBBF6A"/>
+              {/* Head */}
+              <ellipse cx="434" cy="126" rx="22" ry="23" fill="#FBBF6A"/>
+              {/* Hair - light brown short */}
+              <path d="M412 119 Q413 100 434 98 Q455 100 456 119 Q452 108 434 106 Q416 108 412 119Z" fill="#92400e"/>
+              {/* Eyes */}
+              <ellipse cx="426" cy="127" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="426" cy="126" rx="1.2" ry="1.2" fill="white"/>
+              <ellipse cx="442" cy="127" rx="3" ry="3.5" fill="#1e293b"/>
+              <ellipse cx="442" cy="126" rx="1.2" ry="1.2" fill="white"/>
+              {/* Eyebrows */}
+              <path d="M422 119 Q426 117 430 119" stroke="#92400e" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              <path d="M438 119 Q442 117 446 119" stroke="#92400e" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              {/* Smile */}
+              <path d="M426 135 Q434 141 442 135" stroke="#c0604a" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              {/* Both arms holding tablet in front */}
+              <path d="M408 172 Q390 180 386 200" stroke="#FBBF6A" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              <path d="M460 172 Q475 185 476 208" stroke="#FBBF6A" strokeWidth="12" strokeLinecap="round" fill="none"/>
+              {/* Tablet */}
+              <rect x="382" y="194" width="98" height="68" rx="6" fill="#374151" stroke="#1f2937" strokeWidth="1.5"/>
+              <rect x="386" y="198" width="90" height="56" rx="4" fill="#e2e8f0"/>
+              <rect x="390" y="202" width="82" height="44" rx="2" fill="#16a34a" opacity="0.9"/>
+              <rect x="394" y="207" width="55" height="4" rx="2" fill="white" opacity="0.8"/>
+              <rect x="394" y="215" width="38" height="3" rx="1.5" fill="white" opacity="0.5"/>
+              <rect x="394" y="222" width="45" height="3" rx="1.5" fill="white" opacity="0.5"/>
+              <rect x="452" y="208" width="14" height="16" rx="2" fill="white" opacity="0.2"/>
+              <text x="453" y="220" fontSize="6" fill="white" fontWeight="bold" opacity="0.9">✓</text>
+              {/* Legs */}
+              <rect x="412" y="212" width="18" height="40" rx="8" fill="#1e3a5f"/>
+              <rect x="436" y="212" width="18" height="40" rx="8" fill="#1e3a5f"/>
+              {/* Shoes */}
+              <ellipse cx="421" cy="254" rx="14" ry="7" fill="#0f172a"/>
+              <ellipse cx="445" cy="254" rx="14" ry="7" fill="#0f172a"/>
 
-              {/* Small floating dots decoration */}
-              <circle cx="140" cy="50" r="4" fill="#fed7aa"/>
-              <circle cx="128" cy="70" r="3" fill="#bbf7d0"/>
-              <circle cx="148" cy="80" r="2" fill="#fca5a5"/>
-              <circle cx="450" cy="100" r="5" fill="#fed7aa"/>
-              <circle cx="462" cy="120" r="3" fill="#bbf7d0"/>
-              <circle cx="440" cy="125" r="2.5" fill="#fca5a5"/>
+              {/* Floating payroll cards */}
+              {/* Card: Net Pay */}
+              <rect x="152" y="8" width="110" height="54" rx="10" fill="white" stroke="#fed7aa" strokeWidth="1.5" filter="url(#card-shadow)"/>
+              <rect x="152" y="8" width="110" height="18" rx="10" fill="#f97316"/>
+              <rect x="152" y="18" width="110" height="8" rx="0" fill="#f97316"/>
+              <text x="162" y="21" fontSize="7" fill="white" fontWeight="bold">NET PAY</text>
+              <text x="162" y="39" fontSize="14" fill="#1e293b" fontWeight="bold">₹61,299</text>
+              <text x="162" y="52" fontSize="6" fill="#94a3b8">June 2026 · Approved ✓</text>
+
+              {/* Card: Attendance */}
+              <rect x="10" y="248" width="100" height="52" rx="10" fill="white" stroke="#bbf7d0" strokeWidth="1.5" filter="url(#card-shadow)"/>
+              <rect x="10" y="248" width="100" height="18" rx="10" fill="#16a34a"/>
+              <rect x="10" y="258" width="100" height="8" rx="0" fill="#16a34a"/>
+              <text x="20" y="262" fontSize="7" fill="white" fontWeight="bold">ATTENDANCE</text>
+              <text x="20" y="279" fontSize="11" fill="#1e293b" fontWeight="bold">21 Present</text>
+              <text x="20" y="291" fontSize="6" fill="#94a3b8">0 LOP · 4 W/Off</text>
+
+              {/* Decorative dots */}
+              <circle cx="190" cy="95" r="5" fill="#fed7aa"/>
+              <circle cx="176" cy="110" r="3.5" fill="#bbf7d0"/>
+              <circle cx="200" cy="118" r="2.5" fill="#fca5a5"/>
+              <circle cx="390" cy="140" r="4" fill="#fed7aa"/>
+              <circle cx="402" cy="155" r="3" fill="#c4b5fd"/>
             </svg>
           </div>
         </div>
