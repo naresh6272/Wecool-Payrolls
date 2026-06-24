@@ -125,7 +125,7 @@ async function main() {
     { key: "hra_percent_of_basic", value: "40", dataType: "NUMBER", category: "PAYROLL" as const, label: "HRA % of Basic" },
     { key: "annual_leave_quota", value: "16", dataType: "NUMBER", category: "LEAVE" as const, label: "Annual Leave Quota" },
     { key: "monthly_leave_credit", value: "1.33", dataType: "NUMBER", category: "LEAVE" as const, label: "Monthly Leave Credit" },
-    { key: "late_free_count", value: "3", dataType: "NUMBER", category: "ATTENDANCE" as const, label: "Free Late Arrivals" },
+    { key: "late_free_count", value: "5", dataType: "NUMBER", category: "ATTENDANCE" as const, label: "Free Late Arrivals" },
     { key: "late_per_half_day", value: "2", dataType: "NUMBER", category: "ATTENDANCE" as const, label: "Lates Per Half-Day" },
     { key: "ot_warehouse_daily_rate", value: "1000", dataType: "NUMBER", category: "OVERTIME" as const, label: "Warehouse OT Rate (₹/day)" },
     { key: "salary_credit_day", value: "1", dataType: "NUMBER", category: "PAYROLL" as const, label: "Salary Credit Day" },
