@@ -46,7 +46,7 @@ export interface PayrollRecord {
 
 type EditFields = {
   basicSalary: string; hra: string; conveyance: string; bonus: string;
-  specialAllowance: string; overtimeAmount: string;
+  specialAllowance: string; overtimeAmount: string; overtimeDays: string;
   professionalTax: string; lopDeduction: string; lateDeduction: string;
   presentDays: string; lopDays: string; lateCount: string;
 };
@@ -93,6 +93,7 @@ export default function PayrollRecordCard({
     bonus: String(Number(rec.bonus)),
     specialAllowance: String(Number(rec.specialAllowance)),
     overtimeAmount: String(Number(rec.overtimeAmount)),
+    overtimeDays: String(Number(rec.overtimeDays)),
     professionalTax: String(Number(rec.professionalTax)),
     lopDeduction: String(Number(rec.lopDeduction)),
     lateDeduction: String(Number(rec.lateDeduction)),
@@ -157,6 +158,14 @@ export default function PayrollRecordCard({
       if (key === "lopDays") {
         const lop = parseFloat(val) || 0;
         next.lopDeduction = String(Math.round(lop * perDay * 100) / 100);
+      }
+      if (key === "overtimeDays") {
+        const days = parseFloat(val) || 0;
+        next.overtimeAmount = String(Math.round(days * perDay * 100) / 100);
+      }
+      if (key === "overtimeAmount") {
+        const amt = parseFloat(val) || 0;
+        next.overtimeDays = String(perDay > 0 ? Math.round((amt / perDay) * 100) / 100 : 0);
       }
       if (key === "lateCount") {
         const late = parseFloat(val) || 0;
@@ -311,13 +320,18 @@ export default function PayrollRecordCard({
                       ["Conveyance", rec.conveyance, "conveyance"],
                       ["Bonus", rec.bonus, "bonus"],
                       ["Special Allowance", rec.specialAllowance, "specialAllowance"],
-                      ["Overtime", rec.overtimeAmount, "overtimeAmount"],
                     ] as [string, number, keyof EditFields][]).map(([label, val, key]) => (
                       <div key={label} className="flex justify-between items-center">
                         <span className="text-stone-500">{label}</span>
                         {isEditing ? editInput(key) : <span className="font-medium text-stone-800">₹{fmt(val)}</span>}
                       </div>
                     ))}
+                    <div className="flex justify-between items-center">
+                      <span className="text-stone-500">Overtime</span>
+                      <span className="font-medium text-stone-800">
+                        ₹{fmt(isEditing ? parseFloat(fields.overtimeAmount) || 0 : rec.overtimeAmount)}
+                      </span>
+                    </div>
                     <div className="flex justify-between pt-1 border-t border-stone-100 font-bold">
                       <span className="text-stone-700">Gross</span>
                       <span className="text-stone-900">₹{fmt(isEditing ? liveGross : rec.grossEarnings)}</span>
@@ -350,7 +364,7 @@ export default function PayrollRecordCard({
                         ["Present", rec.presentDays, "presentDays", "days"],
                         ["Weekly Off", rec.weeklyOffDays ?? 0, null, "days"],
                         ["Late", rec.lateCount, "lateCount", "times"],
-                        ["OT", rec.overtimeDays, null, `days${Number(rec.overtimeAmount) > 0 ? ` · ₹${fmt(rec.overtimeAmount)}` : ""}`],
+                        ["OT", rec.overtimeDays, "overtimeDays", `days${Number(rec.overtimeAmount) > 0 ? ` · ₹${fmt(rec.overtimeAmount)}` : ""}`],
                       ] as [string, number, keyof EditFields | null, string][]).map(([l, v, key, u]) => (
                         <div key={l} className="flex justify-between items-center text-stone-600 text-sm">
                           <span>{l}</span>
