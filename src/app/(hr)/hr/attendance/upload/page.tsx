@@ -9,7 +9,7 @@ export default async function AttendanceUploadPage() {
   const uploads = await prisma.attendanceUpload.findMany({
     include: { uploadedBy: true },
     orderBy: { createdAt: "desc" },
-    take: 10,
+    take: 5,
   });
 
   return (
